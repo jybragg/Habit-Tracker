@@ -3,7 +3,7 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/habit.js");
+var habit = require("../models/habit.js");
 
 //Create the `router` for the app, and export the `router` at the end of your file
 
@@ -30,7 +30,7 @@ router.put("/:id", function (req, res) {
 
     console.log("id", id);
 
-    burger.updateOne(id, function () {
+    habit.updateOne(id, function () {
         res.redirect("/");
     });
 });

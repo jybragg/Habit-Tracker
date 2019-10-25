@@ -1,0 +1,68 @@
+<div class="jumbotron text-center enter_selection" style="background-color:forestgreen">
+    <h1 class="display-4">Do that habit!</h1>
+    <hr class="my-6">
+    <p class="lead">Enter a habit that you would like to eat!</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <div id='avail'>
+                <h2>Habits Available to Eat:</h2>
+                <ul>
+                    {{#each habits}} {{#unless this.accepted}}
+                    <li>
+                        {{this.id}}. {{this.habit_name}}
+
+                        <form action="/{{this.id}}?_method=PUT" method="POST">
+                            <input type="hidden" name="accepted" value="false">
+                            <button class="btn btn-warning" type="submit">Add Me!</button>
+                        </form>
+
+                    </li>
+                    {{/unless}} {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col text-center">
+            <div id='accepted'>
+                <h2>Habitss That Have <br>Been Accepted: </h2>
+
+                <ul>
+                    {{#each habits}} {{#if this.accepted}}
+                    <li>
+                        {{this.id}}. {{this.habit_name}}
+                    </li>
+                    {{/if}} {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="my-2">
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col text-center">
+            <div id='add'>
+                <h2>Add a Habit: </h2>
+                <form class="create-update-form" action="/" method="POST">
+                    <div class="form-group">
+                        <label for="dab">Habit Name:</label>
+                        <input type="text" id="dab" name="habit_name">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Add Habit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<div class="container text-center" style="height: 100px">
+    <br>
+    <footer></footer>
+</div>
