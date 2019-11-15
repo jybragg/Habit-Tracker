@@ -13,3 +13,5 @@
 MySQL, Node, Express, Handlebars, Bootstrap
 
 ### Here is the deployed version:
+
+https://habitstrackers.herokuapp.com/
