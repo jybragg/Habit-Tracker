@@ -1,14 +1,14 @@
 <div class="jumbotron text-center enter_selection" style="background-color:forestgreen">
-    <h1 class="display-4">Do that habit!</h1>
+    <h1 class="display-4 text-white">Accomplish that habit!</h1>
     <hr class="my-6">
-    <p class="lead">Enter a habit that you would like to eat!</p>
+    <p class="lead text-white">Enter a habit that you would like to accomplish!</p>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col text-center">
             <div id='avail'>
-                <h2>Habits Available to Eat:</h2>
+                <h2>Habits:</h2>
                 <ul>
                     {{#each habits}} {{#unless this.accepted}}
                     <li>
@@ -16,7 +16,7 @@
 
                         <form action="/{{this.id}}?_method=PUT" method="POST">
                             <input type="hidden" name="accepted" value="false">
-                            <button class="btn btn-warning" type="submit">Add Me!</button>
+                            <button class="btn btn-warning" type="submit">Accomplish Me!</button>
                         </form>
 
                     </li>
@@ -27,7 +27,7 @@
 
         <div class="col text-center">
             <div id='accepted'>
-                <h2>Habitss That Have <br>Been Accepted: </h2>
+                <h2>Habits That Have <br>Been Accomplished: </h2>
 
                 <ul>
                     {{#each habits}} {{#if this.accepted}}
@@ -54,7 +54,7 @@
                         <label for="dab">Habit Name:</label>
                         <input type="text" id="dab" name="habit_name">
                     </div>
-                    <button class="btn btn-primary" type="submit">Add Habit</button>
+                    <button class="btn btn-success" type="submit">Add Habit</button>
                 </form>
             </div>
         </div>
