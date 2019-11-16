@@ -12,7 +12,8 @@
 
 MySQL, Node, Express, Handlebars, Bootstrap
 
-![Image of Habit Tracker](/public/assets/images/screenshot.PNG)
+### Here is a screenshot of the Home Page:
+![Image of Habit Tracker](/public/assets/images/homepage.png)
 
 ### Here is the deployed version:
 
